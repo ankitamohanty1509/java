@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: your-dockerhub-username/helloworld:latest
+        image: ankitamohanty1509/helloworld:latest
         ports:
         - containerPort: 8080
