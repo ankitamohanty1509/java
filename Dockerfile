@@ -1,11 +1,14 @@
-# Use an OpenJDK base image
-FROM openjdk:11-jre-slim
+Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim
 
-# Copy the Java file into the container
+# Set the working directory
+WORKDIR /app
+
+# Copy the Java source code into the container
 COPY HelloWorld.java /app/HelloWorld.java
 
-# Compile the Java file
-RUN javac /app/HelloWorld.java
+# Compile the Java source code
+RUN javac HelloWorld.java
 
-# Run the Java application
-CMD ["java", "-cp", "/app", "HelloWorld"]
+# Run the Java program
+CMD ["java", "HelloWorld"]
